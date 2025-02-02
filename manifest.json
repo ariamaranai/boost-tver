@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "boostver",
+  "version": "0",
+  "description": "Boost tver.jp",
+  "icons": {
+    "128": "128.png"
+  },
+  "content_scripts": [{
+    "js": ["main.js"],
+    "matches": ["https://tver.jp/*"],
+    "world": "MAIN",
+    "run_at": "document_start"
+  }]
+}
