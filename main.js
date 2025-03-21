@@ -5,6 +5,7 @@
   o.defineProperty(self, "trustedTypes", {
     get: () => {}
   });
+  o.prototype.hasOwnProperty.call = (a, b) => b in a;
   let none = o.seal(0);
   Image = function () {
     return none;
