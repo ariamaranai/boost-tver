@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "priority": 1019999999,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "integral-core-cookie-sync-for-vr.js|"
+    }
+  }
+]
