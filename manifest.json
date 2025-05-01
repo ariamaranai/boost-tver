@@ -2,15 +2,9 @@
   "manifest_version": 3,
   "name": "boost-tver",
   "version": "0",
-  "description": "Boost and search for tver.jp",
+  "description": "Boost tver.jp",
   "icons": {
     "128": "128.png"
-  },
-  "omnibox": {
-    "keyword": "tv"
-  },
-  "background": {
-    "service_worker": "bg.js"
   },
   "content_scripts": [{
     "css": ["main.css"],
