@@ -6,7 +6,10 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "integral-core-cookie-sync-for-vr.js|"
+      "resourceTypes": ["script"],
+      "requestMethods": ["get"],
+      "domainType": "firstParty",
+      "urlFilter": "|https://tver.jp/vr/integral-core-cookie-sync-for-vr.js|"
     }
   }
 ]
