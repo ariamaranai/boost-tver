@@ -7,10 +7,11 @@
     trustedTypes: { get: () => {} }
   });
 
-  o.prototype.hasOwnProperty = function (a) { return a in this }
-  o.prototype.hasOwnProperty.call = (a, b) => b in a;
+  let p = o.prototype;
+  p.hasOwnProperty = function (a) { return a in this }
+  p.hasOwnProperty.call = (a, b) => b in a;
 
-  Element.prototype.addEventListener = function (a, b, c) {
+  (p = Element.prototype).addEventListener = function (a, b, c) {
     switch (a) {
       case "MozTransitionEnd":
       case "animationcancel":
@@ -72,7 +73,7 @@
         a != "/doubleserve.js?adname=x" &&
         a != "https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js" &&
         a.slice(12, 18) != "google" &&
-          Element.prototype.setAttribute.call(this, "src", a)
+        p.setAttribute.call(this, "src", a)
       }
     },
     onerror: { set: () => 0 },
@@ -83,7 +84,7 @@
   Image = function () { return none }
 
   let d = document;
-  d.addEventListener("DOMContentLoaded", () => {
+  d.addEventListener("DOMContentLoaded", () =>
     d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js"
-  });
+  );
 }
