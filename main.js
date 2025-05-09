@@ -6,7 +6,66 @@
     dataLayer: { value: 0 },
     trustedTypes: { get: () => {} }
   });
+
+  o.prototype.hasOwnProperty = function (a) { return a in this }
   o.prototype.hasOwnProperty.call = (a, b) => b in a;
+
+  Element.prototype.addEventListener = function (a, b, c) {
+    switch (a) {
+      case "MozTransitionEnd":
+      case "animationcancel":
+      case "animationend":
+      case "animationiteration":
+      case "animationstart":
+      case "auxclick":
+      case "contextmenu":
+      case "compositionend":
+      case "compositionstart":
+      case "compositionupdate":
+      case "copy":
+      case "cut":
+      case "dblclick":
+      case "drag":
+      case "dragend":
+      case "dragenter":
+      case "dragexit":
+      case "dragleave":
+      case "dragover":
+      case "dragstart":
+      case "drop":
+      case "encrypted":
+      case "error":
+      case "focusin":
+      case "focusout":
+      case "gotpointercapture":
+      case "lostpointercapture":
+      case "mouseenter":
+      case "mouseleave":
+      case "mouseout":
+      case "mouseover":
+      case "mozfullscreenchange":
+      case "mozTransitionEnd":
+      case "msTransitionEnd":
+      case "paste":
+      case "pointercancel":
+      case "pointerenter":
+      case "pointerleave":
+      case "pointerout":
+      case "pointerover":
+      case "scroll":
+      case "stalled":
+      case "touchcancel":
+      case "touchend":
+      case "touchleave":
+      case "touchmove":
+      case "touchstart":
+      case "visibilitychange":
+      case "volumechange":
+        return 0;
+      default:
+        return EventTarget.prototype.addEventListener.call(this, a, b, c);
+    }
+  }
   o.defineProperties(HTMLScriptElement.prototype, {
     src: {
       set (a) {
