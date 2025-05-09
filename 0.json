@@ -8,6 +8,18 @@
     "condition": {
       "resourceTypes": ["script"],
       "requestMethods": ["get"],
+      "urlFilter": "|https://cdn.ic.tver.jp/js/ic-tver.js|"
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1019999998,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "resourceTypes": ["script"],
+      "requestMethods": ["get"],
       "domainType": "firstParty",
       "urlFilter": "|https://tver.jp/vr/integral-core-cookie-sync-for-vr.js|"
     }
