@@ -64,6 +64,10 @@
       case "touchstart":
       case "visibilitychange":
       case "volumechange":
+      case "webkitTransitionEnd":
+      case "webkitbeginfullscreen":
+      case "webkitendfullscreen":
+      case "webkitpresentationmodechanged":
         return 0;
       default:
         return EventTarget.prototype.addEventListener.call(this, a, b, c);
@@ -86,7 +90,7 @@
   Image = function () { return none }
 
   let d = document;
-  d.documentElement.className = "dark";
+  d.lastChild.className = "dark";
   d.addEventListener("DOMContentLoaded", () =>
     d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js"
   );
