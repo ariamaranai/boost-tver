@@ -8,7 +8,9 @@
     "condition": {
       "resourceTypes": ["script"],
       "requestMethods": ["get"],
-      "urlFilter": "|https://cdn.ic.tver.jp/js/ic-tver.js|"
+      "domainType": "firstParty",
+      "urlFilter": "|https://cdn.ic.tver.jp/js/ic-tver.js|",
+      "isUrlFilterCaseSensitive": true
     }
   },
   {
@@ -21,7 +23,8 @@
       "resourceTypes": ["script"],
       "requestMethods": ["get"],
       "domainType": "firstParty",
-      "urlFilter": "|https://tver.jp/vr/integral-core-cookie-sync-for-vr.js|"
+      "urlFilter": "|https://tver.jp/vr/integral-core-cookie-sync-for-vr.js|",
+      "isUrlFilterCaseSensitive": true
     }
   }
 ]
