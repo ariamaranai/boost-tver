@@ -42,17 +42,21 @@
       case "invalid":
       case "languagechange":
       case "lostpointercapture":
+/*
       case "mouseenter":
       case "mouseleave":
       case "mouseout":
       case "mouseover":
+*/
       case "mozfullscreenchange":
       case "mozTransitionEnd":
       case "msTransitionEnd":
       case "paste":
       case "pointercancel":
+      case "pointerdown":
       case "pointerenter":
       case "pointerleave":
+      case "pointerver":
       case "pointerout":
       case "pointerover":
       case "scroll":
