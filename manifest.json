@@ -6,16 +6,6 @@
   "icons": {
     "128": "128.png"
   },
-  "permissions": [
-    "declarativeNetRequest"
-  ],
-  "declarative_net_request": {
-    "rule_resources": [{
-      "id": "0",
-      "path": "0.json",
-      "enabled": true
-    }]
-  },
   "content_scripts": [{
     "css": ["main.css"],
     "js": ["main.js"],
