@@ -42,16 +42,17 @@
       case "invalid":
       case "languagechange":
       case "lostpointercapture":
-/*
+    /*
       case "mouseenter":
       case "mouseleave":
       case "mouseout":
       case "mouseover":
-*/
+    */
       case "mozfullscreenchange":
       case "mozTransitionEnd":
       case "msTransitionEnd":
       case "paste":
+    /*
       case "pointercancel":
       case "pointerdown":
       case "pointerenter":
@@ -59,6 +60,7 @@
       case "pointerver":
       case "pointerout":
       case "pointerover":
+    */
       case "scroll":
       case "stalled":
       case "touchcancel":
@@ -92,7 +94,7 @@
 
   let none = o.seal(0);
   Image = function () { return none }
-
+  
   let d = document;
   d.lastChild.className = "dark";
   d.addEventListener("DOMContentLoaded", () =>
