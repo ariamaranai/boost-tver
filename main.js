@@ -2,7 +2,7 @@
   let o = Object;
   o.freeze = a => a;
   o.isFrozen = () => 0;
-  o.defineProperties(self, {
+  o.defineProperties(top, {
     dataLayer: { value: 0 },
     trustedTypes: { get: () => {} }
   });
@@ -97,7 +97,5 @@
   
   let d = document;
   d.lastChild.className = "dark";
-  d.addEventListener("DOMContentLoaded", () =>
-    d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js"
-  );
+  d.addEventListener("DOMContentLoaded", () => d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js");
 }
