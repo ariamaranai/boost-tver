@@ -42,25 +42,10 @@
       case "invalid":
       case "languagechange":
       case "lostpointercapture":
-    /*
-      case "mouseenter":
-      case "mouseleave":
-      case "mouseout":
-      case "mouseover":
-    */
       case "mozfullscreenchange":
       case "mozTransitionEnd":
       case "msTransitionEnd":
       case "paste":
-    /*
-      case "pointercancel":
-      case "pointerdown":
-      case "pointerenter":
-      case "pointerleave":
-      case "pointerver":
-      case "pointerout":
-      case "pointerover":
-    */
       case "scroll":
       case "stalled":
       case "touchcancel":
@@ -84,8 +69,8 @@
       set (a) {
         a != "/doubleserve.js?adname=x" &&
         a != "https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js" &&
-        a.slice(12, 18) != "google" &&
-          p.setAttribute.call(this, "src", a)
+        a[12] != "g" && a[13] != "o" && a[14] != "o" && a[15] != "g" && a[16] != "l" && a[17] != "e" &&
+        p.setAttribute.call(this, "src", a);
       }
     },
     onerror: { set: () => 0 },
@@ -94,7 +79,7 @@
 
   let none = o.seal(0);
   Image = function () { return none }
-  
+
   let d = document;
   d.lastChild.className = "dark";
   d.addEventListener("DOMContentLoaded", () => d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js");
