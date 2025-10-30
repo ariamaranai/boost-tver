@@ -6,11 +6,9 @@
     dataLayer: { value: 0 },
     trustedTypes: { get: () => {} }
   });
-
   let p = o.prototype;
   p.hasOwnProperty = function (a) { return a in this }
   p.hasOwnProperty.call = (a, b) => b in a;
-
   (p = Element.prototype).addEventListener = function (a, b, c) {
     switch (a) {
       case "MozTransitionEnd":
@@ -69,17 +67,15 @@
       set (a) {
         a != "/doubleserve.js?adname=x" &&
         a != "https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js" &&
-        a[12] != "g" && a[13] != "o" && a[14] != "o" && a[15] != "g" && a[16] != "l" && a[17] != "e" &&
+        !(a[12] == "g" && a[13] == "o" && a[14] == "o" && a[15] == "g" && a[16] == "l" && a[17] == "e") &&
         p.setAttribute.call(this, "src", a);
       }
     },
     onerror: { set: () => 0 },
     timeout: { set: () => 0 }
   });
-
   let none = o.seal(0);
   Image = function () { return none }
-
   let d = document;
   d.lastChild.className = "dark";
   d.addEventListener("DOMContentLoaded", () => d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js");
