@@ -65,10 +65,10 @@
   o.defineProperties(HTMLScriptElement.prototype, {
     src: {
       set (a) {
-        a != "/doubleserve.js?adname=x" &&
-        a != "https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js" &&
-        !(a[12] == "g" && a[13] == "o" && a[14] == "o" && a[15] == "g" && a[16] == "l" && a[17] == "e") &&
-        p.setAttribute.call(this, "src", a);
+        return a != "/doubleserve.js?adname=x" &&
+          a != "https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js" &&
+          !s.startsWith("google", 12) &&
+          p.setAttribute.call(this, "src", a);
       }
     },
     onerror: { set: () => 0 },
@@ -78,5 +78,7 @@
   Image = function () { return none }
   let d = document;
   d.lastChild.className = "dark";
-  d.addEventListener("DOMContentLoaded", () => d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js");
+  d.addEventListener("DOMContentLoaded", () =>
+    d.head.appendChild(d.createElement('script')).src = "//cdn.ic.tver.jp/js/integralCoreCommon.js",
+  { once: !0 });
 }
