@@ -9,6 +9,7 @@
   let p = o.prototype;
   p.hasOwnProperty = function (a) { return a in this }
   p.hasOwnProperty.call = (a, b) => b in a;
+  let _addEventListener = Element.prototype.addEventListener;
   (p = Element.prototype).addEventListener = function (a, b, c) {
     switch (a) {
       case "MozTransitionEnd":
@@ -59,7 +60,7 @@
       case "webkitpresentationmodechanged":
         return 0;
       default:
-        return EventTarget.prototype.addEventListener.call(this, a, b, c);
+        return _addEventListener.call(this, a, b, c);
     }
   }
   o.defineProperties(HTMLScriptElement.prototype, {
