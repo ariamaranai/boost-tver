@@ -47,6 +47,7 @@
       case "paste":
       case "scroll":
       case "stalled":
+      case "textInput":
       case "touchcancel":
       case "touchend":
       case "touchleave":
@@ -68,7 +69,7 @@
       set (a) {
         return a != "/doubleserve.js?adname=x" &&
           a != "https://pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js" &&
-          !s.startsWith("google", 12) &&
+          !a.startsWith("google", 12) &&
           p.setAttribute.call(this, "src", a);
       }
     },
